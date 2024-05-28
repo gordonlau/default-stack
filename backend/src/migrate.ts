@@ -21,11 +21,8 @@ async function createMigrationsTable(sql: postgres.Sql) {
 }
 
 async function migrateUp() {
-    const pathNames = await glob(__dirname + '/migrations/*.{js,ts}');
-    const files = Array.from(pathNames.reduce(
-        (acc,pathName) => acc.add(pathName.split('/migrations/')[1].split('.')[0]),
-        new Set<string>()
-    ));
+    const pathNames = await glob(__dirname + '/migrations/*.{js,ts}', {ignore: "**/*.d.ts"});
+    const files = pathNames.map(pathName => pathName.split('/migrations/')[1].split('.')[0]);
     files.sort();
     await sql.begin(async (tx) => {
         await createMigrationsTable(tx);
