@@ -7,7 +7,7 @@ export class AppService {
     constructor(@Inject(Token.SQL) private sql: postgres.Sql) {}
 
     async getHello() {
-        const users = await this.sql`SELECT * FROM USERS `;
+        const users = await this.sql`SELECT * FROM users`;
         return users;
     }
 }

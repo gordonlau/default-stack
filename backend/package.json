@@ -12,6 +12,7 @@
         "start:debug": "nest start --debug --watch",
         "start:prod": "node dist/main",
         "migrate": "ts-node src/migrate.ts",
+        "migrate:prod": "node dist/migrate.js",
         "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix && prettier --write .",
         "test": "jest",
         "test:watch": "jest --watch",
