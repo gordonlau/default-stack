@@ -14,7 +14,7 @@ async function createMigrationsTable(sql: postgres.Sql) {
     await sql`
         CREATE TABLE IF NOT EXISTS migrations (
             id SERIAL PRIMARY KEY,
-            name text,
+            name text unique,
             created_at  timestamp DEFAULT NOW() 
         );
     `;
