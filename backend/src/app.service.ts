@@ -8,7 +8,6 @@ export class AppService {
 
     async getHello() {
         const users = await this.sql`SELECT * FROM USERS `;
-
         return users;
     }
 }
