@@ -1,16 +1,9 @@
-import postgres from "postgres";
-import dotenv from 'dotenv';
-import { Logger } from "@nestjs/common";
 
-dotenv.config({
-    path: ['.env', '.env.local'],
-});
+import Knex from 'knex'
+const config = require('../knexfile')
 
-export const sql = postgres({
-    username: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    debug(connection, query, parameters, paramTypes) {
-        Logger.debug(`sql:\n${query} \n[${parameters}]`)
-    },
-})
+const knexConfig = config[process.env.NODE_ENV || 'development']
+
+export const knex = Knex(knexConfig) 
+
+

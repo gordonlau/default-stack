@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 import { Token } from './models/enums';
-import { sql } from './db';
+import { knex } from './db';
 
 
 
@@ -13,8 +13,8 @@ import { sql } from './db';
     providers: [
         AppService,
         {
-            provide: Token.SQL,
-            useValue: sql,
+            provide: Token.DB,
+            useValue: knex,
         },
     ],
 })

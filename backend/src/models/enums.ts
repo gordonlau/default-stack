@@ -1,3 +1,3 @@
 export enum Token {
-    SQL = 'SQL',
+    DB = 'DB',
 }

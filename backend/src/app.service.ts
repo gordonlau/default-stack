@@ -1,13 +1,12 @@
 import { Inject, Injectable } from '@nestjs/common';
-import postgres from 'postgres';
 import { Token } from './models/enums';
+import { Knex } from 'knex'
 
 @Injectable()
 export class AppService {
-    constructor(@Inject(Token.SQL) private sql: postgres.Sql) {}
+    constructor(@Inject(Token.DB) private knex: Knex) {}
 
     async getHello() {
-        const users = await this.sql`SELECT * FROM users`;
-        return users;
+        return await this.knex.select<{id:string}>('*').from('users'); 
     }
 }
