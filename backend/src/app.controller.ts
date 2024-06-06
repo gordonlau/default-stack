@@ -2,6 +2,7 @@ import {
     Body,
     Controller,
     Get,
+    Logger,
     Param,
     ParseIntPipe,
     Post,
@@ -16,13 +17,15 @@ export class AppController {
 
     @Get('/hello/:id')
     getHello(@Param('id', ParseIntPipe) id: number) {
-        console.log(id);
+        Logger.debug(id);
         return this.appService.getHello();
     }
 
     @Post('/post')
-    async postContent(@Body(ValidationPipe) content: FormBody) {
-        console.log(content);
-        return new StatusResponse(true);
+    async postContent(@Body(ValidationPipe) content: FormBody){
+        Logger.debug(content);
+        return {
+            success:true,
+        } as StatusResponse
     }
 }

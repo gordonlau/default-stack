@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty } from 'class-validator';
+import { IsBoolean, IsEmail, IsNotEmpty } from 'class-validator';
 
 export class FormBody {
     @IsEmail()
@@ -12,8 +12,7 @@ export class FormBody {
 }
 
 export class StatusResponse {
+
+    @IsBoolean()
     success: boolean;
-    constructor(success: boolean) {
-        this.success = success;
-    }
 }
