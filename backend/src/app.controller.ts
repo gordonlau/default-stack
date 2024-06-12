@@ -22,10 +22,10 @@ export class AppController {
     }
 
     @Post('/post')
-    async postContent(@Body(ValidationPipe) content: FormBody){
+    async postContent(@Body(ValidationPipe) content: FormBody) {
         Logger.debug(content);
         return {
-            success:true,
-        } as StatusResponse
+            success: true,
+        } as StatusResponse;
     }
 }

@@ -12,7 +12,6 @@ export class FormBody {
 }
 
 export class StatusResponse {
-
     @IsBoolean()
     success: boolean;
 }

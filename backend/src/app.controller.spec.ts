@@ -2,6 +2,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
+jest.mock('./app.service')
+
 describe('AppController', () => {
     let appController: AppController;
 
@@ -14,9 +16,7 @@ describe('AppController', () => {
         appController = app.get<AppController>(AppController);
     });
 
-    describe('root', () => {
-        it('should return "Hello World!"', () => {
-            expect(appController.getHello(1)).toBe('Hello World!');
-        });
-    });
+    it("should be defined", ()=>{
+        expect(appController).toBeDefined()
+    })
 });

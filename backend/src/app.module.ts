@@ -2,20 +2,11 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-import { Token } from './models/enums';
-import { knex } from './db';
-
-
+import { GlobalModule } from './global/global.module';
 
 @Module({
-    imports: [],
+    imports: [GlobalModule],
     controllers: [AppController],
-    providers: [
-        AppService,
-        {
-            provide: Token.DB,
-            useValue: knex,
-        },
-    ],
+    providers: [AppService],
 })
 export class AppModule {}
