@@ -1,11 +1,12 @@
-import { Route, Switch } from 'wouter';
+import { Route, Switch, useLocation } from 'wouter';
 import { Home } from './pages/Home';
 import { AuthGuard } from './components/AuthGuard';
 
 function App() {
+    const [location] = useLocation()
     return (
         <div>
-            <AuthGuard>
+            <AuthGuard key={location}>
                 <Switch>
                     <Route path="/" component={Home} />
                 </Switch>
