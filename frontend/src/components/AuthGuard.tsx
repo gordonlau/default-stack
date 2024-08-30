@@ -3,7 +3,7 @@ import { useAuthStore } from "../stores/auth"
 
 
 interface AuthGuardProps{
-    children: React.ReactElement
+    children: React.ReactElement[]
 }
 
 
