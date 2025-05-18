@@ -2,7 +2,7 @@ import { Redirect } from 'wouter';
 import { useAuthStore } from '../stores/auth';
 
 interface AuthGuardProps {
-    children: React.ReactElement[];
+    children: React.ReactElement | React.ReactElement[];
 }
 
 export function AuthGuard(props: AuthGuardProps) {

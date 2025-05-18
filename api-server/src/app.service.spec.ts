@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppService } from './app.service';
-import { Token, knex } from 'src/global/db';
+import { Token } from 'src/global/db';
+import { db } from '../kysely.config';
 
 describe('AuthService', () => {
     let service: AppService;
@@ -11,7 +12,7 @@ describe('AuthService', () => {
                 AppService,
                 {
                     provide: Token.DB,
-                    useValue: knex,
+                    useValue: db,
                 },
             ],
         }).compile();

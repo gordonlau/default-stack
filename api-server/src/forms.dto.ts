@@ -1,17 +1,16 @@
-import { IsBoolean, IsEmail, IsNotEmpty } from 'class-validator';
+import { createZodDto } from 'nestjs-zod';
+import { z } from 'zod';
 
-export class FormBody {
-    @IsEmail()
-    username: string;
+export const FormBodySchema = z.object({
+    username: z.string().email(),
+    password: z.string().nonempty(),
+    date: z.string().nonempty(),
+});
 
-    @IsNotEmpty()
-    password: string;
+export class FormBody extends createZodDto(FormBodySchema) {}
 
-    @IsNotEmpty()
-    date: string;
-}
+export const StatusResponseSchema = z.object({
+    success: z.boolean(),
+});
 
-export class StatusResponse {
-    @IsBoolean()
-    success: boolean;
-}
+export class StatusResponse extends createZodDto(StatusResponseSchema) {}

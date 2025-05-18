@@ -1,15 +1,10 @@
-import Knex from 'knex';
-const config = require('../../knexfile');
-
-const knexConfig = config[process.env.NODE_ENV || 'development'];
-
-export const knex = Knex(knexConfig);
+import { db } from '../../kysely.config';
 
 export enum Token {
     DB = 'DB',
 }
 
-export const knexProvider = {
+export const dbProvider = {
     provide: Token.DB,
-    useValue: knex,
+    useValue: db,
 };

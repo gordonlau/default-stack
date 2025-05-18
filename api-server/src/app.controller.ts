@@ -1,31 +1,30 @@
-import {
-    Body,
-    Controller,
-    Get,
-    Logger,
-    Param,
-    ParseIntPipe,
-    Post,
-    ValidationPipe,
-} from '@nestjs/common';
+import { Body, Controller, Get, Logger, Param, Post } from '@nestjs/common';
 import { AppService } from './app.service';
-import { FormBody, StatusResponse } from './forms.dto';
+import {
+    FormBody,
+    FormBodySchema,
+    StatusResponse,
+    StatusResponseSchema,
+} from './forms.dto';
+import { ZodBody, ZodResponse } from './global/zod.decorator';
 
 @Controller()
 export class AppController {
     constructor(private readonly appService: AppService) {}
 
     @Get('/hello/:id')
-    getHello(@Param('id', ParseIntPipe) id: number) {
+    getHello(@Param('id') id: string) {
         Logger.debug(id);
         return this.appService.getHello();
     }
 
     @Post('/post')
-    async postContent(@Body(ValidationPipe) content: FormBody) {
+    @ZodBody(FormBodySchema)
+    @ZodResponse(StatusResponseSchema)
+    async postContent(@Body() content: FormBody) {
         Logger.debug(content);
         return {
             success: true,
-        } as StatusResponse;
+        };
     }
 }
