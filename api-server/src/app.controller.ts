@@ -1,11 +1,6 @@
 import { Body, Controller, Get, Logger, Param, Post } from '@nestjs/common';
 import { AppService } from './app.service';
-import {
-    FormBody,
-    FormBodySchema,
-    StatusResponse,
-    StatusResponseSchema,
-} from './forms.dto';
+import { FormBody, StatusResponse } from './forms.dto';
 import { ZodBody, ZodResponse } from './global/zod.decorator';
 
 @Controller()
@@ -19,8 +14,8 @@ export class AppController {
     }
 
     @Post('/post')
-    @ZodBody(FormBodySchema)
-    @ZodResponse(StatusResponseSchema)
+    @ZodBody(FormBody.schema)
+    @ZodResponse(StatusResponse.schema)
     async postContent(@Body() content: FormBody) {
         Logger.debug(content);
         return {
