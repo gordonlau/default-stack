@@ -3,7 +3,7 @@ import { Home } from './pages/Home';
 import { AuthGuard } from './components/AuthGuard';
 
 function App() {
-    const [location] = useLocation()
+    const [location] = useLocation();
     return (
         <div>
             <AuthGuard key={location}>
