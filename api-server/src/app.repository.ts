@@ -1,13 +1,12 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Kysely } from 'kysely';
-import { Token } from './global/db';
 import { DB } from './global/db-types';
 
 @Injectable()
 export class AppRepository {
-    constructor(@Inject(Token.DB) private db: Kysely<DB>) {}
+    constructor() {}
 
-    async getHello() {
+    async getHello(db: Kysely<DB>) {
         return {};
     }
 }
