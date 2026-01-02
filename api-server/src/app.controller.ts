@@ -1,35 +1,46 @@
-import {
-    Body,
-    Controller,
-    Get,
-    Logger,
-    Param,
-    ParseIntPipe,
-    Post,
-} from '@nestjs/common';
+import { Controller, Get, Logger } from '@nestjs/common';
 import { AppService } from './app.service';
-import { FormBody, StatusResponse } from './forms.dto';
-import { ZodBody, ZodResponse } from './global/zod.decorator';
-import { ApiParam } from '@nestjs/swagger';
+import { tsRestHandler, TsRestHandler } from '@ts-rest/nest';
+import { contract } from './contracts';
+import { generateOpenApi } from '@ts-rest/open-api';
 
 @Controller()
 export class AppController {
     constructor(private readonly appService: AppService) {}
 
-    @Get('/hello/:id')
-    @ApiParam({ name: 'id', type: 'number' })
-    getHello(@Param('id', ParseIntPipe) id: string) {
-        Logger.debug(id);
-        return this.appService.getHello();
+    @TsRestHandler(contract.getHello)
+    getHello() {
+        return tsRestHandler(contract.getHello, async (req) => {
+            const id = req.params.id;
+            Logger.debug(id);
+            return {
+                status: 200,
+                body: await this.appService.getHello(),
+            };
+        });
     }
 
-    @Post('/post')
-    @ZodBody(FormBody.schema)
-    @ZodResponse(StatusResponse.schema)
-    async postContent(@Body() content: FormBody) {
-        Logger.debug(content);
-        return {
-            success: true,
-        };
+    @TsRestHandler(contract.postContent)
+    async postContent() {
+        return tsRestHandler(contract.postContent, async (req) => {
+            const content = req.body;
+            Logger.debug(content);
+            return {
+                status: 200,
+                body: {
+                    success: true,
+                },
+            };
+        });
+    }
+
+    @Get('/openapi-spec')
+    async getOpenAPISpec() {
+        return generateOpenApi(contract, {
+            info: {
+                title: 'Default Stack API',
+                version: '1.0.0',
+            },
+        });
     }
 }
