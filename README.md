@@ -78,7 +78,7 @@ The app will be available at `http://localhost:8080`.
 | `pnpm dev`            | Starts the local development server                      |
 | `pnpm build`          | Builds the project for production                        |
 | `pnpm preview`        | Previews the production build locally                    |
-| `pnpm start`          | Starts the built production application                  |
+| `pnpm start`          | Same as `pnpm preview`                                   |
 | `pnpm test`           | Runs tests using Vitest                                  |
 | `pnpm kysely-codegen` | Generates TypeScript interfaces from the database schema |
 | `pnpm lint`           | Formats code using Prettier                              |
