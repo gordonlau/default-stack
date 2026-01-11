@@ -11,6 +11,7 @@ A modern, full-stack web application template built with **Astro**, **React**, a
 - **Testing:** [Vitest](https://vitest.dev/)
 - **Validation:** [Zod](https://zod.dev/)
 - **State Management:** [Zustand](https://zustand.docs.pmnd.rs/) and [Nano Stores](https://github.com/nanostores/nanostores)
+- **Data Fetching:** [@tanstack/react-query](https://tanstack.com/query/latest)
 - **Formatting:** [Prettier](https://prettier.io/)
 
 ## 🛠 Prerequisites
