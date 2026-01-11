@@ -10,6 +10,7 @@ A modern, full-stack web application template built with **Astro**, **React**, a
 - **Styling:** [Emotion](https://emotion.sh/) (CSS-in-JS)
 - **Database:** PostgreSQL with [Kysely](https://kysely.dev/) (Type-safe SQL query builder)
 - **Testing:** [Vitest](https://vitest.dev/)
+- **Form Handling:** [React Hook Form](https://react-hook-form.com/)
 - **Validation:** [Zod](https://zod.dev/)
 - **State Management:** [Zustand](https://zustand.docs.pmnd.rs/) and [Nano Stores](https://github.com/nanostores/nanostores)
 - **Data Fetching:** [@tanstack/react-query](https://tanstack.com/query/latest)
