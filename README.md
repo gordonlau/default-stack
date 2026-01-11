@@ -10,6 +10,7 @@ A modern, full-stack web application template built with **Astro**, **React**, a
 - **Database:** PostgreSQL with [Kysely](https://kysely.dev/) (Type-safe SQL query builder)
 - **Testing:** [Vitest](https://vitest.dev/)
 - **Validation:** [Zod](https://zod.dev/)
+- **State Management:** [Zustand](https://zustand.docs.pmnd.rs/) and [Nano Stores](https://github.com/nanostores/nanostores)
 - **Formatting:** [Prettier](https://prettier.io/)
 
 ## 🛠 Prerequisites
