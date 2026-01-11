@@ -6,6 +6,7 @@ A modern, full-stack web application template built with **Astro**, **React**, a
 
 - **Framework:** [Astro](https://astro.build/) (SSR with Node.js adapter)
 - **UI Library:** [React](https://react.dev/)
+- **Island Routing:** [wouter](https://github.com/molefrog/wouter)
 - **Styling:** [Emotion](https://emotion.sh/) (CSS-in-JS)
 - **Database:** PostgreSQL with [Kysely](https://kysely.dev/) (Type-safe SQL query builder)
 - **Testing:** [Vitest](https://vitest.dev/)
