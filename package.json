@@ -8,7 +8,7 @@
         "preview": "astro preview",
         "astro": "astro",
         "test": "vitest",
-        "start": "node dist/server/entry.mjs",
+        "start": "astro preview",
         "kysely-codegen": "kysely-codegen --out-file ./src/models/types.ts",
         "lint": "prettier . --write"
     },
