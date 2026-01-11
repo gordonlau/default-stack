@@ -8,6 +8,7 @@ A modern, full-stack web application template built with **Astro**, **React**, a
 - **UI Library:** [React](https://react.dev/)
 - **Styling:** [Emotion](https://emotion.sh/) (CSS-in-JS)
 - **Database:** PostgreSQL with [Kysely](https://kysely.dev/) (Type-safe SQL query builder)
+- **Testing:** [Vitest](https://vitest.dev/)
 - **Validation:** [Zod](https://zod.dev/)
 - **Formatting:** [Prettier](https://prettier.io/)
 
@@ -78,6 +79,7 @@ The app will be available at `http://localhost:8080`.
 | `pnpm build`          | Builds the project for production                        |
 | `pnpm preview`        | Previews the production build locally                    |
 | `pnpm start`          | Starts the built production application                  |
+| `pnpm test`           | Runs tests using Vitest                                  |
 | `pnpm kysely-codegen` | Generates TypeScript interfaces from the database schema |
 | `pnpm lint`           | Formats code using Prettier                              |
 
