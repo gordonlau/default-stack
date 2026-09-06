@@ -3,7 +3,7 @@ import octopus from '../assets/octopus_color.png'
 export function Home() {
     return (
         <div>
-            <img src={octopus.src} alt="Octopus" />
+            <img src={octopus.src} alt="Octopus" style={{ height: '300px' }} />
         </div>
     )
 }
