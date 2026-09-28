@@ -15,7 +15,7 @@ A modern, full-stack web application template built with **Astro**, **React**, a
 - **Validation:** [Zod](https://zod.dev/)
 - **State Management:** [Zustand](https://zustand.docs.pmnd.rs/) and [Nano Stores](https://github.com/nanostores/nanostores)
 - **Data Fetching:** [@tanstack/react-query](https://tanstack.com/query/latest)
-- **Formatting:** [Prettier](https://prettier.io/)
+- **Formatting:** [Biome](https://biomejs.dev/)
 
 ## 🛠 Prerequisites
 
@@ -86,7 +86,7 @@ The app will be available at `http://localhost:8080`.
 | `pnpm start`          | Same as `pnpm preview`                                   |
 | `pnpm test`           | Runs tests using Vitest                                  |
 | `pnpm kysely-codegen` | Generates TypeScript interfaces from the database schema |
-| `pnpm lint`           | Formats code using Prettier                              |
+| `pnpm lint`           | Formats code using Biome.js                              |
 
 ## 📂 Project Structure
 

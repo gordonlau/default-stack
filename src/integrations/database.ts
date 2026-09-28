@@ -1,5 +1,5 @@
-import { Pool } from 'pg'
 import { Kysely, PostgresDialect } from 'kysely'
+import { Pool } from 'pg'
 import type { DB } from '../models/types'
 
 const dialect = new PostgresDialect({

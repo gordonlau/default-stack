@@ -10,7 +10,7 @@
         "test": "vitest",
         "start": "astro preview",
         "kysely-codegen": "kysely-codegen --out-file ./src/models/types.ts",
-        "lint": "prettier . --write"
+        "lint": "biome check --write src"
     },
     "dependencies": {
         "@astrojs/node": "^11.1.5",
@@ -35,9 +35,8 @@
         "zustand": "^5.0.15"
     },
     "devDependencies": {
+        "@biomejs/biome": "^2.5.14",
         "kysely-codegen": "^0.20.0",
-        "prettier": "3.9.6",
-        "prettier-plugin-astro": "^0.14.1",
         "vitest": "^5.0.0"
     }
 }
